@@ -23,7 +23,9 @@ var opts = {
     delay: 0,
     quality: 100,
     output: "jpeg",
-    verbose: false
+    verbose: true,
+    device: "HD Pro Webcam C920"
+
 
 }
 
@@ -52,7 +54,7 @@ fs.watch('./public/images', function (event, filename) {
 
         if(parsedresults.photos[0].tags[0] != undefined){
           //facial attributes get printed out here
-          sendstring = "Gender: " + parsedresults.photos[0].tags[0].attributes.gender.value + " Glasses:" + parsedresults.photos[0].tags[0].attributes.glasses.value + " Smiling:" + parsedresults.photos[0].tags[0].attributes.glasses.value + " Age:" + parsedresults.photos[0].tags[0].attributes.age_est.value + " Mood:" + parsedresults.photos[0].tags[0].attributes.mood.value + "  Eyes:" + parsedresults.photos[0].tags[0].attributes.eyes.value + " Lips:" + parsedresults.photos[0].tags[0].attributes.lips.value + " Neutral Mood:" + parsedresults.photos[0].tags[0].attributes.neutral_mood.value + " Anger:" + parsedresults.photos[0].tags[0].attributes.anger.value + " Fear:" + parsedresults.photos[0].tags[0].attributes.fear.value + " Disgust:" + parsedresults.photos[0].tags[0].attributes.disgust.value + " Happiness:" + parsedresults.photos[0].tags[0].attributes.happiness.value + " Sadness:" + parsedresults.photos[0].tags[0].attributes.sadness.value + " Surprise:" + parsedresults.photos[0].tags[0].attributes.surprise.value
+          sendstring = "Gender: " + parsedresults.photos[0].tags[0].attributes.gender.value + " Glasses:" + parsedresults.photos[0].tags[0].attributes.glasses.value + " Smiling:" + parsedresults.photos[0].tags[0].attributes.glasses.value + " Age:" + parsedresults.photos[0].tags[0].attributes.age_est.value + " Mood:" + parsedresults.photos[0].tags[0].attributes.mood.value + "  Eyes:" + parsedresults.photos[0].tags[0].attributes.eyes.value + " Lips:" + parsedresults.photos[0].tags[0].attributes.lips.value // + " Neutral Mood:" + parsedresults.photos[0].tags[0].attributes.neutral_mood.value + " Anger:" + parsedresults.photos[0].tags[0].attributes.anger.value + " Fear:" + parsedresults.photos[0].tags[0].attributes.fear.value + " Disgust:" + parsedresults.photos[0].tags[0].attributes.disgust.value + " Happiness:" + parsedresults.photos[0].tags[0].attributes.happiness.value + " Sadness:" + parsedresults.photos[0].tags[0].attributes.sadness.value + " Surprise:" + parsedresults.photos[0].tags[0].attributes.surprise.value
           console.log(sendstring);
           io.sockets.emit('mysocket', sendstring);
 //          app.get("/", function(req, res) {

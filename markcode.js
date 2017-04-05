@@ -46,7 +46,7 @@ oscServer.on("message", function(msg, rinfo) {
 
 
 
-watcher.add('imgcam.png');
+watcher.add('images/test_image.jpg');
 var log = console.log.bind(console);
 
 
